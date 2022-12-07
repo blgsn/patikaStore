@@ -79,7 +79,7 @@ public abstract class Hardware extends Products {
 
     @Override
     public String toString() {
-      
+      //listing phones and computers on the screen
         if(getProductType()==ProductType.Phone) {
 
         return getProductName() + "    |"  + getStorage() + "      |" + getScreenSpecifications() + "   |"  + getCamera() + "     |" + getCell() + "    |" + getRam() + "      |" + getColor();
