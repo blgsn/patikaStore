@@ -11,13 +11,14 @@ public class UserManagement {
     public UserManagement(PatikaStore shop){
         input = new Scanner(System.in);
         this.shop = shop;
+	    //loops until user selects exit
         while(!exit){
             getMenu();
             performSelection(getSelection());
         }
 
     }
-
+//users's choises
     public void getMenu(){
         System.out.println("PatikaStore Ürün Yönetim Paneli !\n" +
                 "1 - Notebook İşlemleri\n" +
@@ -37,23 +38,23 @@ public class UserManagement {
         clear();
         switch(selection){
             case "0":
-                this.exit = true;
+                this.exit = true;//exits
                 break;
             case "1":
-                while(!menuNotebook());
+                while(!menuNotebook());//for notebook
                 break;
             case "2":
-                while(!menuCellPhone());
+                while(!menuCellPhone());//for cellphone
                 break;
             case "3":
-                shop.listBrands();
+                shop.listBrands();//list of products
                 enterToContinue();
                 break;
         }
         clear();
 
     }
-
+//notebook operations
     public Boolean menuNotebook(){
         Boolean result = false;
         System.out.println("Notebook Yönetim Paneli !\n" +
@@ -63,14 +64,14 @@ public class UserManagement {
                 "\n\n\n");
         String selection = getSelection();
         switch (selection) {
-            case "0":
+            case "0":   //main menu
                 result = true;
                 break;
-            case "1":
+            case "1":  //add notebook
                 addNotebookProduct();
                 result = false;
                 break;
-            case "2":
+            case "2"://list of products
                 clear();
                 shop.listProducts(ProductType.Notebook);
                 enterToContinue();
@@ -80,7 +81,7 @@ public class UserManagement {
         clear();
         return result;
     }
-
+//cellphone operations
     public Boolean menuCellPhone(){
         Boolean result = false;
         System.out.println("Cep Telefonu Yönetim Paneli !\n" +
@@ -105,11 +106,11 @@ public class UserManagement {
                 break;
           
         }
-        clear();
+        clear();//line skip
         return result;
     }
 
-
+//add cellphone to the list
 	public void addCellPhoneProduct(){
         System.out.println("Ürünün markasını, modelini ve fiyatını aralarına ',' koyarak yazınız");
         System.out.println("Örnek: X Marka, red mi note 10 pro");
@@ -118,7 +119,7 @@ public class UserManagement {
         shop.addProduct(productData[0].trim(), new Phone(productData[1].trim(), Integer.parseInt(productData[2].trim())));
        
     }
-
+//add notebook to the list
     public void addNotebookProduct(){
         System.out.println("Ürünün markasını, modelini ve fiyatını aralarına ',' koyarak yazınız");
         System.out.println("Örnek: X Marka, Lenovo V16");
