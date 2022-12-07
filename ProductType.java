@@ -1,5 +1,5 @@
 package product;
-
+//product type takes two items phone and notebook
 public enum ProductType {
 	Phone("Cep Telefonu"),
     Notebook("Notebook");
