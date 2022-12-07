@@ -1,5 +1,5 @@
 package product.specifications;
-
+//specifications of screen
 public enum ScreenSpecifications {
 	inch14("14.0"),
     inch15("15.6");
