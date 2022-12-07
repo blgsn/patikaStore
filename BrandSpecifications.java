@@ -4,7 +4,7 @@ import product.specifications.Ram;
 import product.readyType.Phone;
 import product.readyType.Notebook;
 
-
+//brands and features in the store
 public class BrandSpecifications {
 	 PatikaStore shop;
 	    public BrandSpecifications(PatikaStore shop){
